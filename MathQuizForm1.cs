@@ -91,7 +91,7 @@ namespace MathQuiz
         }
 
         /// Check the answer to see if the user got everything right. 
-        /// <returns>True if the answer's correct, false otherwise.</returns> 
+        /// True if the answer's correct, false otherwise. 
 
         private bool CheckTheAnswer()
         {
