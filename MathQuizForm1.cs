@@ -84,9 +84,10 @@ namespace MathQuiz
             dividedRightLabel.Text = divisor.ToString();
             division.Value = 0;
             
-            // Start the timer.
+            // Start the timer, reset BackColor property.
             timeLeft = 30;
             timeLabel.Text = "30 secondes";
+            timeLabel.BackColor = Color.Empty;
             timer1.Start();
         }
 
@@ -162,6 +163,17 @@ namespace MathQuiz
                 multiplication.Value = multiplicand * multiplier;
                 division.Value = dividend / divisor;
                 startButton.Enabled = true;
+            }
+            if (timeLeft < 6)
+            {
+                // When only five seconds remain in a quiz, turn the timeLabel control red
+                // by setting its BackColor property.
+                timeLabel.BackColor = Color.Red;
+            }
+            else
+            {
+                // Reset the color when the quiz is over.
+                timeLabel.BackColor = Color.Empty;
             }
         }
 
